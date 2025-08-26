@@ -1,0 +1,63 @@
+<div class="mb-4 p-8" >
+    
+    <p-card header="Simple Card" class="flex justify-content-center" styleClass="user-form">
+        <form action="" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+        <div class="field">
+            <label for="withoutgrouping" class="mr-2 block">Name</label>
+            <input type="text" pInputText formControlName="name" class="w-full" />
+            <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+                <div *ngIf="signupForm.get('name')?.errors?.['required']" >
+                    Username is required.
+                </div>
+                <!-- <div *ngIf="signupForm.get('name')?.errors.['minLength']">
+                    Name must be at least 4 characters.
+                </div> -->
+            </div>
+        </div>
+        <div class="field ">
+            <label for="withoutgrouping" class="mr-2 block">Email</label>
+            <input type="text" pInputText formControlName="email" class="w-full" />
+            <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                <div *ngIf="signupForm.get('email')?.errors?.['required']" >
+                    Email is required.
+                </div>
+                <div *ngIf="signupForm.get('email')?.errors?.['email']" class="text-red-500">
+                    Please enter a valid email.
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label for="withoutgrouping" class="mr-2 block">Contact</label>
+            <p-inputNumber formControlName="contact" mode="decimal" inputId="withoutgrouping" [useGrouping]="false" class="w-full"/> 
+            <div *ngIf="signupForm.get('contact')?.invalid && signupForm.get('contact')?.touched" class="text-red-500">
+          Contact is required.
+        </div>
+        </div>
+         <div class="field">
+            <label for="withoutgrouping" class="mr-2 block">Password</label>
+            <p-password formControlName="password" [feedback]="false" class="w-full"/>
+             <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+          <div *ngIf="signupForm.get('password')?.errors?.['required']" class="text-red-500">
+            Password is required.
+          </div>
+          <div *ngIf="signupForm.get('password')?.errors?.['minlength']" class="text-red-500">
+            Password must be at least 8 characters.
+          </div>
+        </div>
+        </div>
+        <div class="field">
+            <label for="withoutgrouping" class="mr-2 block">Confirm Password</label>
+            <p-password formControlName="confirmPassword" [feedback]="false" class="w-full"/> 
+            <div *ngIf="signupForm.invalid && signupForm.touched && signupForm.errors?.['passwordMismatch']" class="text-red-500">
+          Passwords do not match.
+        </div>
+        </div>
+        <div class="field">
+            <p-button label="Submit" [disabled]="!signupForm.valid"/>
+            <h6>Already have an account? <a href="">Login</a></h6>
+        </div>
+        </form>
+    </p-card>
+
+</div>
+

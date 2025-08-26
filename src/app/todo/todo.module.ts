@@ -6,7 +6,7 @@ import { TodoComponent } from './todo.component';
 import { CardModule } from 'primeng/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { EditorModule } from 'primeng/editor';
 @NgModule({
   declarations: [
     TodoComponent
@@ -17,6 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule,
     CardModule,
     ReactiveFormsModule,
+    EditorModule,
+    FormsModule
   ]
 })
 export class TodoModule { }

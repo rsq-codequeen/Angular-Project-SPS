@@ -15,6 +15,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { CardModule } from 'primeng/card';
 
 const primeModules = [
     InputTextModule,
@@ -31,7 +32,8 @@ const primeModules = [
     AutoCompleteModule,
     MultiSelectModule,
    InputTextareaModule,
-   ScrollPanelModule
+   ScrollPanelModule,
+   CardModule
 ];
 
 @NgModule({
